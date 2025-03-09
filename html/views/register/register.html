@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro de Usuario</title>
+        <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS aquí -->
+    </head>
+    <body style="background-color: #f8f9fa; color: #333; font-family: 'Comic Sans MS', cursive, sans-serif;">
+        <header style="text-align: center; background-color: #ff9900; padding: 20px;margin-bottom: auto;">
+            <h1 style="margin: 0; color: #fff;">¡Regístrate ahora!</h1>
+        </header>
+        <div class="container" style="max-width: 400px; background-color: #33ff66; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+            <h2 style="text-align: center; color: #ff9900;">Registro de Usuario</h2>
+            <form action="../../../controllers/RegisterController.php" method="POST">
+                <label for="nombre" style="color: #fff;">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;"><br>
+                
+                <label for="apellido" style="color: #fff;">Apellido:</label><br>
+                <input type="text" id="apellido" name="apellido" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;"><br>
+                
+                <label for="email" style="color: #fff;">Email:</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;"><br>
+                
+                <label for="password" style="color: #fff;">Contraseña:</label><br>
+                <input type="password" id="password" name="password" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;"><br>
+                
+                <label for="confirm_password" style="color: #fff;">Confirmar Contraseña:</label><br>
+                <input type="password" id="confirm_password" name="confirm_password" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box;"><br>
+                
+                <input type="submit" value="Registrarse" style="width: 100%; padding: 10px; background-color: #ff0066; color: #fff; border: none; border-radius: 3px; cursor: pointer;">
+            </form>
+        </div>
+    </body>
+</html>

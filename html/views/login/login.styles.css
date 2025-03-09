@@ -1,0 +1,70 @@
+body {
+    font-family: sans-serif; /* Mantenemos sans-serif para coherencia */
+    background-color: #f4f4f4; /* Mantenemos el mismo fondo */
+    margin: 0;
+    padding: 20px; /* Agregamos un poco de padding general */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centramos el formulario */
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    background-color: white; /* Mantenemos el fondo blanco */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados como en el listado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 100%; /* Aseguramos que el contenedor ocupe todo el ancho posible */
+    box-sizing: border-box; /* Incluimos el padding en el ancho */
+}
+
+.container h2 {
+    text-align: center;
+    color: #333; /* Color de texto más sutil */
+    margin-bottom: 20px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container form label {
+    margin-bottom: 5px;
+    color: #333; /* Color de texto más sutil */
+}
+
+.container form input,
+.container form select,
+.container form textarea {
+    width: calc(100% - 22px); /* Ajustamos el ancho para compensar el padding y el borde */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Borde más suave */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box;
+    font-family: sans-serif; /* Mantenemos la misma fuente */
+}
+
+.container form input[type="submit"],
+.container form button {
+    background-color: #007bff; /* Color del botón de añadir equipo */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: sans-serif; /* Mantenemos la misma fuente */
+}
+
+.container form input[type="submit"]:hover,
+.container form button:hover {
+    background-color: #0056b3; /* Oscurecemos al pasar el ratón */
+}
+
+.container .error-message {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}

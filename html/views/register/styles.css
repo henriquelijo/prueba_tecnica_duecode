@@ -1,0 +1,49 @@
+body {
+    font-family: sans-serif; /* Mantenemos sans-serif para coherencia */
+    background-color: #f4f4f4; /* Mantenemos el mismo fondo */
+    margin: 0;
+    padding: 20px; /* Agregamos un poco de padding general */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centramos el contenedor */
+    min-height: 100vh; /* Establece la altura mínima de la ventana */
+}
+
+.container {
+    max-width: 600px;
+    background-color: white; /* Mantenemos el fondo blanco */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados como en el listado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 100%; /* Aseguramos que el contenedor ocupe todo el ancho posible */
+    box-sizing: border-box; /* Incluimos el padding en el ancho */
+}
+
+.container h2 {
+    text-align: center;
+    color: #333; /* Color de texto más sutil */
+    margin-bottom: 20px;
+}
+
+.container p {
+    color: #666; /* Color de texto para párrafos */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+.container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container li {
+    margin-bottom: 10px;
+}
+
+.container a {
+    color: #007bff; /* Color de los enlaces */
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
