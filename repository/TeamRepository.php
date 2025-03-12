@@ -5,7 +5,6 @@ require_once '../logs/errors_log.php';
 
 class TeamRepository
 {
-    private $db;
 
     public static function save(Team $team)
     {

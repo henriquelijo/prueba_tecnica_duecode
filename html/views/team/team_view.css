@@ -5,24 +5,37 @@ body {
     background-color: #f4f4f4;
 }
 
+.container_details_title {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #007bff; 
+    color: white;
+}
+
 .main-content {
     display: flex;
-    justify-content: center; /* Centrar el contenido horizontalmente */
+    flex-direction: column; 
+    align-items: center; 
     padding: 20px;
 }
 
-.team-details {
-    flex: 2;
+.team-details,
+.player-list {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* Limitar el ancho del contenedor de detalles */
+    max-width: 600px;
+    width: 100%; 
+    margin-bottom: 20px; 
+    box-sizing: border-box; 
 }
 
-.team-details h2 {
+.team-details h2,
+.player-list h2 {
     margin-bottom: 20px;
     color: #333;
+    text-align: center; 
 }
 
 .team-details p {
@@ -36,9 +49,122 @@ body {
     color: #333;
 }
 
-.container_details_title {
-    /* background-color: white;
-    color: #333; */
+.player-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.player-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+
+.player-list li:last-child {
+    border-bottom: none;
+}
+
+.player-list li:hover {
+    background-color: #f9f9f9;
+}
+
+.player-list h4 {
     text-align: center;
-    padding: 1em 0;
+    color: #999;
+}
+
+#addPlayerButton {
+    background-color: white; 
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#addPlayerButton:hover {
+    background-color: #3e8e41;
+    color: white;
+}
+
+#addPlayerButton {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#playerList {
+    list-style-type: none; 
+    padding: 0;
+    margin-top: 20px;
+}
+
+#playerList div {
+    border: 1px solid #ddd; 
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9; 
+}
+
+#playerList li {
+    margin-bottom: 5px;
+}
+
+#playerList li:first-child {
+    font-weight: bold; 
+}
+
+#playerList li:last-child {
+    color: #888; 
+}
+
+#playerList h4 {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+}
+
+.editPlayerButton {
+    background-color: #007bff; 
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px; 
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.editPlayerButton:hover {
+    background-color: #0056b3; 
+}
+
+.deletePlayerButton {
+    background-color: rgb(209, 22, 22); 
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px; 
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.deletePlayerButton:hover {
+    background-color: rgb(170, 66, 66); 
 }

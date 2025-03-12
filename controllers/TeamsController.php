@@ -3,8 +3,12 @@ require_once '../middlewares/SessionMiddleware.php';
 require_once '../models/Team.php';
 require_once '../repository/TeamRepository.php';
 require_once '../errors/errors_helper.php';
+require_once '../repository/PlayerRepository.php';
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 
 class TeamsController
 {
@@ -15,14 +19,23 @@ class TeamsController
         SessionMiddleware::handle();
 
         $team = TeamRepository::getById($id);
-       
+        $players = PlayerRepository::findByTeam($id);
+
         if ($team) {
-            include '../html/views/team/team_view.php';
+
+            $_SESSION['team'] = $team;
+
+            if($players){
+                $_SESSION['players'] = $players;
+            }else{
+                $_SESSION['players'] = [];
+            }
+
+            header("Location: ../html/views/team/team_view.php?id=$id");
             exit;
         } else {
             echo "Equipo no encontrado.";
         }
-        
     }
 
     public function formController()
@@ -52,8 +65,7 @@ class TeamsController
         } elseif (strlen(trim($data['name'])) > 255) {
             $this->errors['name'] = 'El nombre no puede exceder los 255 caracteres';
         }
-    
-        // Validar deporte (requerido, entre opciones permitidas)
+        
         $deportesPermitidos = ['Fútbol', 'Béisbol', 'Baloncesto', 'Voleibol', 'Otro'];
         if (empty($data['sport'] ?? '')) {
             $this->errors['sport'] = 'Debes seleccionar un deporte';
@@ -61,17 +73,14 @@ class TeamsController
             $this->errors['sport'] = 'Selección de deporte inválida';
         }
     
-        // Validar descripción (requerido)
         if (empty(trim($data['description'] ?? ''))) {
             $this->errors['description'] = 'La descripción es requerida';
         }
     
-        // Validar ciudad (opcional, máximo 255 caracteres)
         if (!empty($data['city']) && strlen(trim($data['city'])) > 255) {
             $this->errors['city'] = 'La ciudad no puede exceder los 255 caracteres';
         }
     
-        // Validar fecha de fundación (formato YYYY-MM-DD)
         if (!empty($data['date_fundation'] ?? '')) {
             $fecha = DateTime::createFromFormat('Y-m-d', $data['date_fundation']);
             if (!$fecha || $fecha->format('Y-m-d') !== $data['date_fundation']) {

@@ -1,5 +1,5 @@
 <?php
-//require_once '../../../controllers/TeamsController.php';
+
 session_start();
 $_SESSION['csrf_token'] = '';
 ?>

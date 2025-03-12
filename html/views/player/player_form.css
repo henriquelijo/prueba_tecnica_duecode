@@ -1,3 +1,4 @@
+
 body {
     font-family: sans-serif;
     background-color: #f4f4f4;
@@ -9,35 +10,31 @@ body {
     min-height: 100vh;
 }
 
-.container {
-    max-width: 400px; /* Ajustamos el ancho máximo a 400px para coincidir */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
     width: 100%;
     box-sizing: border-box;
 }
 
-.container h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.container form {
-    display: flex;
-    flex-direction: column;
-}
-
-.container form label {
+label {
+    display: block;
     margin-bottom: 5px;
     color: #333;
 }
 
-.container form input,
-.container form select,
-.container form textarea {
+input[type="text"],
+input[type="number"],
+textarea {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 15px;
@@ -47,8 +44,11 @@ body {
     font-family: sans-serif;
 }
 
-.container form input[type="submit"],
-.container form button {
+textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -56,15 +56,16 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-family: sans-serif;
+    width: 100%; /* El botón ocupa todo el ancho */
 }
 
-.container form input[type="submit"]:hover,
-.container form button:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-.container .error-message {
+.error {
     color: red;
+    font-size: 0.8em;
+    display: block;
     margin-bottom: 10px;
-    font-size: 0.9em;
 }

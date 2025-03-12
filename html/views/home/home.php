@@ -25,16 +25,17 @@
         </aside>
     </main>
     <script>
+        
         function findTeam(id) {
             fetch('../../../controllers/TeamsController.php?action=getTeam&id=' + id)
-                .then(response => response.text())
-                .then(html => {
-                    // Encuentra un elemento existente en el DOM donde insertar el HTML
-                    const mainContent = document.querySelector('main.main-content'); // o cualquier otro selector válido
-                    if (mainContent) {
-                        mainContent.innerHTML = html; // Inserta el HTML dentro del elemento
+                .then(response => {
+                    if (response.redirected) {
+                        window.location.href = response.url; 
                     } else {
-                        document.body.innerHTML = html; // Si no encuentra main.main-content, reemplaza el body
+                        return response.text().then(text => {
+                            console.error("Error del servidor:", text);
+                            throw new Error("Error del servidor");
+                        });
                     }
                 })
                 .catch(error => {

@@ -66,19 +66,6 @@ class Team {
 
     public function setDateUpdated($date_updated) { $this->date_updated = $date_updated; }
 
-    // Método para cargar desde array
-    public function loadFromArray(array $data) {
-        if (isset($data['id'])) $this->id = $data['id'];
-        if (isset($data['name'])) $this->setName($data['name']);
-        if (isset($data['city'])) $this->setCity($data['city']);
-        if (isset($data['sport'])) $this->setSport($data['sport']);
-        if (isset($data['description'])) $this->setDescription($data['description']);
-        if (isset($data['date_fundation'])) $this->setDateFundation($data['date_fundation']);
-        if (isset($data['date_created'])) $this->date_created = $data['date_created'];
-        if (isset($data['date_updated'])) $this->date_updated = $data['date_updated'];
-    }
-
-    // Validación de fechas
     private function validateDate($date, $format = 'Y-m-d') {
         $d = DateTime::createFromFormat($format, $date);
         return $d && $d->format($format) === $date;
